@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffBE80FF"
     tools:context=".AdminFunctionalitiesPage">
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,12 +14,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="EDIT MENU"
+            android:background="#ff7e51c2"
+            android:textColor="@color/white"
             android:layout_margin="20dp"
             android:id="@+id/editButton"
             />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#ff7e51c2"
+        android:textColor="@color/white"
         android:text="ADD RESTAURANT"
         android:layout_margin="20dp"
         android:id="@+id/button"/>
@@ -26,6 +31,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ADD MENU ITEM"
+        android:background="#ff7e51c2"
+        android:textColor="@color/white"
         android:layout_margin="20dp"
         android:id="@+id/button2"/>
     </LinearLayout>
