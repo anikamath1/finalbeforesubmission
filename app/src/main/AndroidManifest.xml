@@ -62,9 +62,10 @@
         <activity android:name=".AdminFunctionalitiesPage" />
         <activity android:name=".AddRestaurantPage" />
         <activity android:name=".RestaurantManagerLogin" />
-        <activity android:name=".ViewOrders"></activity>
-        <activity android:name=".manager_rowbill"></activity>
-
+        <activity android:name=".ViewOrders" />
+        <activity android:name=".manager_rowbill" />
+        <activity android:name=".AddMenuItem" />
+        <activity android:name=".EditMenuItem"></activity>
     </application>
 
 </manifest>

@@ -5,17 +5,20 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.nfc.Tag;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class dataBaseAccess {
-
+    public static int counter=12;
     private SQLiteOpenHelper openHelper;
     private SQLiteDatabase db;
     private static dataBaseAccess instance;
+    public static int itemNumber=6;
 
 
     //object creation
@@ -109,15 +112,41 @@ public class dataBaseAccess {
         return list;
     }
 
-    public void insert(String restname)
+    public void insert(String restname,String location)
     {
-        String str = "INSERT INTO restDetails(restID,restName,restAddress) VALUES(?,?,?)";
+        String str = "INSERT INTO restDetails(restName,restAddress) VALUES(?,?)";
         SQLiteStatement stmt = db.compileStatement(str);
-        stmt.bindLong(1, 9);
-        stmt.bindString(2,restname);
-        stmt.bindString(3, "andheri");
+        //stmt.bindLong(1, counter++);
+        stmt.bindString(1,restname);
+        stmt.bindString(2, location);
         long i = stmt.executeInsert();
     }
+    public void insertItem(String itemtype,String itemName,int itemPrice)
+    {
+        String str = "INSERT INTO menuMao VALUES(?,?,?,?)";
+        SQLiteStatement stmt = db.compileStatement(str);
+        stmt.bindLong(1, itemNumber++);
+        stmt.bindString(2,itemtype);
+        stmt.bindString(3, itemName);
+        stmt.bindLong(4, itemPrice);
+        long i = stmt.executeInsert();
+    }
+    public void deleteItem(String itemName)
+    {
+        String str = "DELETE FROM menuMao WHERE itemName=?";
+        SQLiteStatement stmt = db.compileStatement(str);
+        stmt.bindString(1, itemName);
+        long j = stmt.executeUpdateDelete();
+    }
+    public void updateItem(int itemPrice,String itemName)
+    {
+        String str = "UPDATE menuMao SET itemPrice=? WHERE itemName=?";
+        SQLiteStatement stmt = db.compileStatement(str);
+        stmt.bindLong(1, itemPrice);
+        stmt.bindString(2, itemName);
+        long j = stmt.executeUpdateDelete();
+    }
+
 
 
 }

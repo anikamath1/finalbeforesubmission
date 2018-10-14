@@ -7,12 +7,22 @@ import android.view.View;
 import android.widget.Button;
 
 public class AdminFunctionalitiesPage extends AppCompatActivity {
-    Button button;
+    Button button,button2,editButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_functionalities_page);
-        button=(Button)findViewById(R.id.button);
+        button = (Button)findViewById(R.id.button);
+        editButton =(Button)findViewById(R.id.editButton);
+        button2=(Button)findViewById(R.id.button2);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editmenuitem = new Intent(getApplicationContext(), EditMenuItem.class);
+                startActivity(editmenuitem);
+            }
+        });
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -20,5 +30,17 @@ public class AdminFunctionalitiesPage extends AppCompatActivity {
                 startActivity(addrestpage);
             }
         });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent addmenuitem = new Intent(getApplicationContext(), AddMenuItem.class);
+                startActivity(addmenuitem);
+
+            }
+        });
+
+
+
     }
 }

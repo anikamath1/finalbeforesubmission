@@ -15,11 +15,18 @@
             android:layout_height="40dp"
             android:hint="Add restaurant name here"
             android:id="@+id/editText"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Add location here"
+            android:id="@+id/locationEdit"/>
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:text="ADD RESTAURANT" />
+
 
     </LinearLayout>
 
